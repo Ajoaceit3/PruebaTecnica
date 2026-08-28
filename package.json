@@ -1,0 +1,52 @@
+{
+  "name": "pruebatecnica",
+  "version": "1.0.0",
+  "description": "Prueba Tecnica desarrollada en Node.js, Express y PostgreSQL",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:seed:undo": "sequelize-cli db:seed:undo:all",
+    "db:test:create": "cross-env NODE_ENV=test DB_NAME=vending_test_db sequelize-cli db:create --env test",
+    "db:test:migrate": "cross-env NODE_ENV=test DB_NAME=vending_test_db sequelize-cli db:migrate --env test",
+    "db:test:seed": "cross-env NODE_ENV=test DB_NAME=vending_test_db sequelize-cli db:seed:all --env test",
+    "db:test:reset": "cross-env NODE_ENV=test DB_NAME=vending_test_db sequelize-cli db:migrate:undo:all --env test && npm run db:test:migrate && npm run db:test:seed",
+    "token": "node scripts/generateToken.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql",
+    "sequelize",
+    "rest-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.0",
+    "pg-hstore": "^2.3.4",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "sequelize": "^6.37.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "sequelize-cli": "^6.6.5",
+    "supertest": "^7.2.2"
+  }
+}

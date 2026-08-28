@@ -1,0 +1,106 @@
+{
+  "info": {
+    "_postman_id": "6f5d7d4d-8e63-4bfb-aeea-301be2e9f170",
+    "name": "Actions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12141815",
+    "_collection_link": "https://go.postman.co/collection/12141815-6f5d7d4d-8e63-4bfb-aeea-301be2e9f170?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Request Action",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"actionType\": \"RESTART\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/machines/3/actions",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "machines",
+            "3",
+            "actions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Machine Actions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/machines/3/actions",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "machines",
+            "3",
+            "actions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActionById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/actions/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "actions",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
